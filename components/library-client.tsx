@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import { ArrowRight, BookMarked, FileCode2, Search, SlidersHorizontal } from 'lucide-react';
 import { useDeferredValue, useMemo, useState } from 'react';
 import { articleIndex } from '@/lib/article-index';
@@ -15,6 +14,6 @@ export function LibraryClient() {
   return <main className="library-page shell"><header className="page-heading library-heading"><span className="eyebrow"><BookMarked /> 119 篇整理内容</span><h1>数字 IC 验证知识库</h1><p>从基础概念到公司面经，在一个地方查找 SystemVerilog、UVM、AMBA 协议与面试准备资料。</p></header>
     <section className="search-panel"><div className="search-box"><Search /><Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索知识点、协议、公司或面试题…" aria-label="搜索知识库" /></div><div className="library-filters"><SlidersHorizontal /><Select value={type} onValueChange={(value) => setType(value as string)}><SelectTrigger><SelectValue>{filters.find((item) => item.value === type)?.label}</SelectValue></SelectTrigger><SelectContent>{filters.map((item) => <SelectItem key={item.value} value={item.value}>{item.label}</SelectItem>)}</SelectContent></Select><Select value={topic} onValueChange={(value) => setTopic(value as string)}><SelectTrigger><SelectValue>{topicLabels[topic]}</SelectValue></SelectTrigger><SelectContent>{Object.entries(topicLabels).map(([value, label]) => <SelectItem key={value} value={value}>{label}</SelectItem>)}</SelectContent></Select></div></section>
     <div className="results-meta"><strong>{results.length}</strong> 篇内容{deferred && <span>匹配“{query}”</span>}</div>
-    {results.length ? <section className="article-grid">{results.map((article) => <Link key={article.slug} href={`/library/${article.slug}`} className="article-card"><div className="article-card-top"><span>{article.typeLabel}</span><FileCode2 /></div><h2>{article.title}</h2><p>{article.excerpt || '打开查看完整内容。'}</p><footer><span>{article.sourcePath.split('/')[0]}</span><span>阅读全文 <ArrowRight /></span></footer></Link>)}</section> : <div className="library-empty"><Search /><h2>没有找到相关内容</h2><p>试试缩短关键词，或切换内容类型和主题。</p></div>}
+    {results.length ? <section className="article-grid">{results.map((article) => <a key={article.slug} href={`/library/${article.slug}`} className="article-card"><div className="article-card-top"><span>{article.typeLabel}</span><FileCode2 /></div><h2>{article.title}</h2><p>{article.excerpt || '打开查看完整内容。'}</p><footer><span>{article.sourcePath.split('/')[0]}</span><span>阅读全文 <ArrowRight /></span></footer></a>)}</section> : <div className="library-empty"><Search /><h2>没有找到相关内容</h2><p>试试缩短关键词，或切换内容类型和主题。</p></div>}
   </main>;
 }
