@@ -1,5 +1,5 @@
 ---
-title: 欢迎来到 AidenICV 数字花园
+title: DVのNotes
 description: 记录数字 IC 验证、芯片设计与持续学习的个人知识库
 date: 2026-09-09
 updated: 2026-09-09
