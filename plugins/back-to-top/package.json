@@ -1,0 +1,31 @@
+{
+  "name": "@aidenicv/back-to-top",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./components": "./components.js",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "back-to-top",
+    "displayName": "Back to top",
+    "description": "Accessible return-to-top control for the right sidebar",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultEnabled": true,
+    "components": {
+      "BackToTop": {
+        "displayName": "Back to top",
+        "defaultPosition": "right",
+        "defaultPriority": 80
+      }
+    }
+  }
+}

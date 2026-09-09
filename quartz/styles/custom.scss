@@ -1,0 +1,357 @@
+@use "./variables.scss" as *;
+
+/* A quiet, reading-first digital garden. The palette comes from quartz.config.yaml. */
+:root {
+  --garden-radius: 8px;
+  --garden-motion: 180ms;
+  --garden-content-width: 780px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  max-width: 1500px;
+  margin-inline: auto;
+}
+
+.center,
+.page-header,
+.page-footer {
+  width: min(100%, var(--garden-content-width));
+  margin-inline: auto;
+}
+
+.sidebar.left,
+.sidebar.right {
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.page-title a,
+.article-title,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  color: var(--dark);
+  letter-spacing: -0.012em;
+}
+
+.page-title a {
+  text-decoration: none;
+}
+
+article {
+  font-size: 1.02rem;
+}
+
+article p,
+article li {
+  color: var(--darkgray);
+}
+
+article a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition:
+    color var(--garden-motion) ease,
+    background-color var(--garden-motion) ease;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--garden-radius);
+}
+
+article img + em {
+  display: block;
+  margin-top: -0.65rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+article blockquote,
+.callout {
+  border-radius: var(--garden-radius);
+}
+
+article :not(pre) > code {
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+}
+
+pre,
+.highlight {
+  border: 1px solid var(--lightgray);
+  border-radius: var(--garden-radius);
+  overflow-x: auto;
+}
+
+.table-container,
+article table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+article table {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+article th {
+  color: var(--dark);
+  background: var(--highlight);
+}
+
+article th,
+article td {
+  min-width: 8rem;
+}
+
+.explorer-content ul,
+.toc-content ul,
+.backlinks ul {
+  padding-left: 0.8rem;
+}
+
+.explorer-content a,
+.toc-content a,
+.backlinks a {
+  border-radius: 5px;
+  transition:
+    color var(--garden-motion) ease,
+    background-color var(--garden-motion) ease;
+}
+
+.explorer-content a.active,
+.explorer-content a[aria-current="page"],
+.toc-content a.in-view {
+  color: var(--secondary);
+  background: var(--highlight);
+  box-shadow: inset 2px 0 0 var(--secondary);
+}
+
+.search > .search-button,
+.darkmode,
+.readermode,
+button {
+  border-radius: var(--garden-radius);
+}
+
+.search > .search-container,
+.popover > .popover-inner,
+.graph-outer {
+  border: 1px solid var(--lightgray);
+  border-radius: 10px;
+  box-shadow: 0 10px 32px rgba(27, 34, 39, 0.08);
+}
+
+.content-meta,
+.breadcrumb-container,
+.page-footer {
+  color: var(--gray);
+}
+
+.page-footer {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 40px;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.65rem;
+  color: var(--gray);
+  border: 1px solid var(--lightgray);
+  border-radius: var(--garden-radius);
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition:
+    color var(--garden-motion) ease,
+    border-color var(--garden-motion) ease,
+    background-color var(--garden-motion) ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  background: var(--highlight);
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+  .page > #quartz-body {
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "grid-sidebar-left grid-sidebar-right"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer";
+  }
+
+  .page > #quartz-body > .center {
+    grid-area: grid-center;
+  }
+
+  .page > #quartz-body .sidebar.right {
+    display: block;
+    width: 100%;
+    max-height: none;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .sidebar.right > * {
+    display: none;
+  }
+
+  .sidebar.right > .toc {
+    display: block;
+    width: min(100%, var(--garden-content-width));
+    max-height: none;
+    margin: 2rem auto 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+
+  .sidebar.right > .back-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 5;
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    background: var(--light);
+  }
+}
+
+/* Keep navigation controls comfortably usable on touch screens. */
+@media (max-width: 800px) {
+  .page > #quartz-body {
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "grid-sidebar-left"
+      "grid-sidebar-right"
+      "grid-center"
+      "grid-footer";
+  }
+
+  .page > #quartz-body > .center {
+    grid-area: grid-center;
+  }
+
+  .page > #quartz-body .sidebar.left {
+    z-index: 4;
+  }
+
+  .explorer-content {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 6;
+    width: min(84vw, 320px);
+    max-height: 100vh;
+    padding: 4.5rem 1rem 1.5rem;
+    overflow-y: auto;
+    background: var(--light);
+    border-right: 1px solid var(--lightgray);
+    box-shadow: 8px 0 28px rgba(27, 34, 39, 0.12);
+    transform: translateX(-105%);
+    transition: transform var(--garden-motion) ease;
+  }
+
+  .explorer[aria-expanded="true"] .explorer-content,
+  .explorer:not(.collapsed) .explorer-content {
+    transform: translateX(0);
+  }
+
+  .page > #quartz-body .sidebar.right {
+    display: block;
+    width: 100%;
+    max-height: none;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .sidebar.right > * {
+    display: none;
+  }
+
+  .sidebar.right > .toc {
+    display: block;
+    width: 100%;
+    max-height: none;
+    margin: 0 0 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+
+  .sidebar.right > .back-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 5;
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    background: var(--light);
+  }
+
+  .search > .search-button,
+  .darkmode,
+  .readermode,
+  button,
+  [role="button"] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .center,
+  .page-header,
+  .page-footer {
+    width: 100%;
+  }
+
+  article {
+    font-size: 1rem;
+  }
+
+  .popover {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
