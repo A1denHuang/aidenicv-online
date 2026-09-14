@@ -43,6 +43,16 @@ npm run build
 
 新增内容后先运行 `npm run build`。构建日志会提示无法解析的内部链接；应在发布前修正。该命令也会把 KaTeX 的 CSS、脚本和字体复制到 `public/static/katex/`，因此线上公式不依赖第三方 CDN。
 
+### IC 验证周报发布约定
+
+周报栏目位于 `content/IC验证周报/`。自动发布任务应按以下约定创建文章：
+
+1. 文件名使用 `YYYY年第WW周.md`，其中 `WW` 为两位 ISO 周数。
+2. Frontmatter 至少包含 `title`、`description`、`date`、`updated`、`tags` 和 `draft: false`。
+3. 正文注明信息覆盖日期，并优先引用项目官网、标准组织、论文原文、厂商技术资料和开发者公告。
+4. 每条动态附原始链接与发布日期，明确区分事实、官方说法和作者判断。
+5. 发布前运行 `npm run build`；构建成功后再提交并推送到 `master`。
+
 ## GitHub Pages 部署
 
 工作流会在推送到 `master` 后自动执行：安装依赖、安装 Quartz 插件、构建 `public/`，再部署到 GitHub Pages。
