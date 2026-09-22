@@ -2,7 +2,7 @@
 title: IC 验证周报
 description: 每周汇总数字 IC 验证领域值得关注的一手动态、技术进展与工程实践
 date: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-22
 tags:
   - IC验证周报
   - 数字IC验证
