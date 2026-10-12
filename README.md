@@ -101,3 +101,4 @@ npm run build
 ## 许可证
 
 网站构建框架 Quartz 及本仓库保留的框架代码遵循其 MIT 许可证。个人笔记内容的再使用许可可在正式公开前另行声明。
+SV笔记源自https://github.com/qingxuanxx/sv_uvm_axi_notes.
