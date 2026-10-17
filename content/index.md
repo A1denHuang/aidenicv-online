@@ -2,7 +2,7 @@
 title: DVのNotes
 description: 记录数字 IC 验证、芯片设计与持续学习的个人知识库
 date: 2026-09-09
-updated: 2026-09-14
+updated: 2026-10-18
 tags:
   - 数字花园
   - 首页
@@ -25,6 +25,8 @@ draft: false
 - 🔖 [[资源收藏/index|资源收藏]]：经过筛选的资料入口
 
 ## 最近更新
+
+- 2026-10-18 · [[学习笔记/SystemVerilog/自测题库/index|SV 自测题库 · 54 题]]
 
 - 2026-09-09 · [[学习笔记/数字电路/CMOS基础|CMOS 基础]]
 - 2026-09-09 · [[学习笔记/数字电路/时序分析|时序分析 Timing Analysis]]
