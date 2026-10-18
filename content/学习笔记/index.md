@@ -2,7 +2,7 @@
 title: 学习笔记
 description: 数字电路、硬件描述语言和验证方法学的系统学习记录
 date: 2026-09-09
-updated: 2026-09-09
+updated: 2026-10-18
 tags: [学习笔记]
 draft: false
 ---
@@ -15,5 +15,6 @@ draft: false
 
 - [[学习笔记/数字电路/index|数字电路]]
 - [[学习笔记/SystemVerilog/index|SystemVerilog]]
+- [[学习笔记/UVM/index|UVM 学习笔记]]：从第 1～9 章系统学习验证方法学与平台实践
 
 学习时可先建立概念连接，再回到具体问题。例如 [[学习笔记/数字电路/CMOS基础#CMOS 反相器|CMOS 反相器]] 会影响传播延迟，而延迟最终进入 [[学习笔记/数字电路/时序分析|时序分析]]。
