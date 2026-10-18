@@ -67,4 +67,4 @@ SoC 中大量控制、状态和中断寄存器需要通过处理器总线访问�
 
 ## 延伸阅读
 
-- [[学习笔记/SystemVerilog/基础语法|SystemVerilog 基础语法]]
+- [[学习笔记/SystemVerilog/学习笔记/index|SystemVerilog 学习笔记]]

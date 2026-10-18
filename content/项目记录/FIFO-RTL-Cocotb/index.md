@@ -67,5 +67,5 @@ FIFO 用来缓冲生产者与消费者之间暂时不一致的数据速率。这
 
 ## 延伸阅读
 
-- [[学习笔记/SystemVerilog/基础语法|SystemVerilog 基础语法]]
+- [[学习笔记/SystemVerilog/学习笔记/index|SystemVerilog 学习笔记]]
 - [[项目记录/AXI4-Lite-Slave-UVM/04-UVM平台架构|AXI 项目的 UVM 平台架构]]：对比 Python/Cocotb 与 UVM 的职责拆分。

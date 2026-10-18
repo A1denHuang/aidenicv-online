@@ -30,7 +30,6 @@ draft: false
 
 - 2026-09-09 · [[学习笔记/数字电路/CMOS基础|CMOS 基础]]
 - 2026-09-09 · [[学习笔记/数字电路/时序分析|时序分析 Timing Analysis]]
-- 2026-09-09 · [[学习笔记/SystemVerilog/基础语法|SystemVerilog 基础语法]]
 
 ## 精选笔记
 

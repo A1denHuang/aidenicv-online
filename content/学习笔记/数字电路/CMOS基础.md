@@ -101,6 +101,6 @@ $$P_{dynamic} = \alpha C_L V_{DD}^{2} f$$
 
 - 上一篇：[[学习笔记/数字电路/index|数字电路索引]]
 - 下一篇：[[学习笔记/数字电路/时序分析|时序分析 Timing Analysis]]
-- 相关笔记：[[学习笔记/SystemVerilog/基础语法|SystemVerilog 基础语法]]
+- 相关笔记：[[学习笔记/SystemVerilog/学习笔记/index|SystemVerilog 学习笔记]]
 
 [^1]: 这里采用一阶模型帮助建立直觉；精确分析还需要考虑短沟道效应、寄生参数与工艺模型。
