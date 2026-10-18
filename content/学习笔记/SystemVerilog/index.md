@@ -13,4 +13,9 @@ draft: false
 
 - [[学习笔记/SystemVerilog/基础语法|基础语法]]
 
-后续将继续补充 OOP、约束随机、SVA 和 functional coverage。
+## 系统学习
+
+- [[学习笔记/SystemVerilog/学习笔记/index|SystemVerilog 学习笔记]]：数据类型与数组、子程序、接口连接、面向对象、约束随机、线程通信和功能覆盖率。
+- [[学习笔记/SystemVerilog/学习笔记/面试八股|SV 面试八股]]：面试核心知识点与参考答案。
+
+按原书第 2～9 章的顺序学习，可从 [[学习笔记/SystemVerilog/学习笔记/数据类型与数组|数据类型与数组]] 开始。
