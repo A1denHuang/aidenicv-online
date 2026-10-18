@@ -57,6 +57,29 @@ article {
   font-size: 1.02rem;
 }
 
+/* Separate self-test questions without adding extra heading or anchor spacing. */
+article hr.sv-question-divider {
+  width: 100%;
+  height: 1px;
+  border: 0;
+  margin: 24px 0;
+  background-color: var(--lightgray);
+
+  & + p:has(> span[id]) {
+    margin: 0;
+    height: 0;
+  }
+
+  & + h2,
+  & + p:has(> span[id]) + h2 {
+    margin-top: 0;
+  }
+
+  @media #{$mobile} {
+    margin-block: 18px;
+  }
+}
+
 article p,
 article li {
   color: var(--darkgray);
