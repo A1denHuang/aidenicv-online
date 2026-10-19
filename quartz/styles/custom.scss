@@ -378,3 +378,49 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+[data-practice] {
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  button,
+  select {
+    font: inherit;
+    color: var(--dark);
+    background: var(--light);
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem;
+    max-width: 100%;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    opacity: 0.5;
+  }
+  textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    min-height: 7rem;
+    margin: 1rem 0;
+    padding: 0.75rem;
+    font: inherit;
+    color: var(--dark);
+    background: var(--light);
+  }
+  a {
+    display: block;
+    margin-top: 1rem;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  :focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+  }
+}
