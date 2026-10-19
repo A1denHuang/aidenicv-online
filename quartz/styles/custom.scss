@@ -198,6 +198,28 @@ button {
   border-top: 1px solid var(--lightgray);
 }
 
+.feedback-intro {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightgray);
+
+  h2 {
+    margin: 0 0 0.4rem;
+    color: var(--dark);
+    font-size: 1.35rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 0.95rem;
+  }
+}
+
+.giscus {
+  margin-top: 1.25rem;
+}
+
 .back-to-top {
   display: inline-flex;
   align-items: center;
