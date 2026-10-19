@@ -148,6 +148,32 @@ plugins:
       position: right
       priority: 80
       condition: not-index
+  - source: "@aidenicv/feedback-intro"
+    enabled: true
+    layout:
+      position: afterBody
+      priority: 5
+      condition: not-index
+  - source: "@quartz-community/comments"
+    enabled: true
+    options:
+      provider: giscus
+      options:
+        repo: A1denHuang/aidenicv-online
+        repoId: R_kgDOUM497w
+        category: 留言与勘误
+        categoryId: DIC_kwDOUM49784DI9gS
+        mapping: pathname
+        strict: true
+        reactionsEnabled: true
+        inputPosition: bottom
+        lightTheme: light
+        darkTheme: dark
+        lang: zh-CN
+    layout:
+      position: afterBody
+      priority: 10
+      condition: not-index
   - source: "@quartz-community/article-title"
     enabled: true
     layout:
@@ -232,18 +258,27 @@ layout:
       gap: 0.5rem
   byPageType:
     "404":
+      exclude: ["@aidenicv/feedback-intro", "@quartz-community/comments"]
       positions:
         beforeBody: []
         left: []
         right: []
     content: {}
     folder:
-      exclude: [reader-mode]
+      exclude:
+        - "@quartz-community/reader-mode"
+        - "@aidenicv/feedback-intro"
+        - "@quartz-community/comments"
       positions:
         right: []
     tag:
-      exclude: [reader-mode]
+      exclude:
+        - "@quartz-community/reader-mode"
+        - "@aidenicv/feedback-intro"
+        - "@quartz-community/comments"
       positions:
         right: []
-    canvas: {}
-    bases: {}
+    canvas:
+      exclude: ["@aidenicv/feedback-intro", "@quartz-community/comments"]
+    bases:
+      exclude: ["@aidenicv/feedback-intro", "@quartz-community/comments"]

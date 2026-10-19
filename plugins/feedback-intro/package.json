@@ -1,0 +1,31 @@
+{
+  "name": "@aidenicv/feedback-intro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./components": "./components.js",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "feedback-intro",
+    "displayName": "Feedback intro",
+    "description": "Heading and guidance shown before the page feedback discussion",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultEnabled": true,
+    "components": {
+      "FeedbackIntro": {
+        "displayName": "Feedback intro",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 5
+      }
+    }
+  }
+}
