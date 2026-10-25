@@ -2,7 +2,7 @@
 title: 第 5 章 · Phase 调度与 Objection 控制
 description: phase 执行顺序、objection 生命周期与 domain 应用
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-25
 tags: [学习笔记, UVM, IC验证]
 draft: false
 ---
@@ -12,7 +12,7 @@ draft: false
 [[学习笔记/UVM/index|返回 UVM 学习笔记目录]] · [[学习笔记/UVM/04-TLM通信与端口连接|上一章]] · [[学习笔记/UVM/06-Sequence激励与Sequencer握手|下一章]]
 
 # 第 5 章 · Phase 调度与 Objection 控制
-> **核心结论**：phase 决定平台在什么阶段做什么，objection 决定耗时 phase 何时结束，domain 决定哪些 component 的动态 phase 必须同步。三者共同构成 UVM 验证平台的运行控制。
+> **核心结论**：[[知识卡片/UVM/15_phase|phase]] 决定平台在什么阶段做什么，[[知识卡片/UVM/16_objection|objection]] 决定耗时 phase 何时结束，[[知识卡片/UVM/17_domain与phase跳转|domain]] 决定哪些 component 的动态 phase 必须同步。三者共同构成 UVM 验证平台的运行控制。
 >
 > **记忆主线**：function phase 建结构和收尾 -> task phase 驱动仿真时间 -> objection 保持 phase 存活 -> drain time 等待流水排空 -> domain 隔离独立运行区域。
 
@@ -158,7 +158,7 @@ endtask
 
 **为什么要拆成 4 组**
 
-- 不同场景挂不同 sequence（如 ch2 的 `i_agt.sqr.main_phase`）。
+- 不同场景挂不同 [[知识卡片/UVM/18_sequence与sequencer|sequence]]（如 ch2 的 `i_agt.sqr.main_phase`）。
 - 支持运行中重新复位（phase jump）。
 - 各组件在同一语义阶段同步动作，不会错位。
 

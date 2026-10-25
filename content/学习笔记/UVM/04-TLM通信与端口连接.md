@@ -2,7 +2,7 @@
 title: 第 4 章 · TLM 通信与端口连接
 description: TLM1.0、port、export、imp、analysis 与 FIFO 通信
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-25
 tags: [学习笔记, UVM, IC验证]
 draft: false
 ---
@@ -12,14 +12,14 @@ draft: false
 [[学习笔记/UVM/index|返回 UVM 学习笔记目录]] · [[学习笔记/UVM/03-组件层次与config_db配置|上一章]] · [[学习笔记/UVM/05-Phase调度与Objection控制|下一章]]
 
 # 第 4 章 · TLM 通信与端口连接
-> **核心结论**：TLM1.0 用 transaction 和标准端口替代 component 之间的直接变量访问。PORT 表示操作发起端，EXPORT 用于转发接口，IMP 是最终实现端；判断连接方向时看控制流，判断 transaction 方向时看数据流。
+> **核心结论**：[[知识卡片/UVM/12_TLM与port_export_imp|TLM1.0]] 用 [[知识卡片/UVM/04_transaction与字段操作|transaction]] 和标准端口替代 component 之间的直接变量访问。PORT 表示操作发起端，EXPORT 用于转发接口，IMP 是最终实现端；判断连接方向时看控制流，判断 transaction 方向时看数据流。
 >
-> **记忆主线**：先确定 put/get/transport -> 再确定 blocking/nonblocking -> 发起者使用 PORT -> 层次透传使用 EXPORT -> 最终处理者使用 IMP 或 FIFO。
+> **记忆主线**：先确定 put/get/transport -> 再确定 blocking/nonblocking -> 发起者使用 PORT -> 层次透传使用 EXPORT -> 最终处理者使用 IMP 或 [[知识卡片/UVM/14_TLM_FIFO|FIFO]]。
 
 ---
 
 ## 4.0 本章定位
-第 2 章已经使用 analysis_port、blocking_get_port 和 analysis FIFO，本章系统解释这些通信结构。
+第 2 章已经使用 [[知识卡片/UVM/13_analysis广播|analysis_port]]、blocking_get_port 和 analysis FIFO，本章系统解释这些通信结构。
 
 | 章节 | 核心问题 |
 |------|----------|

@@ -2,7 +2,7 @@
 title: 第 7 章 · RAL 寄存器模型与前后门访问
 description: 寄存器模型、adapter、predictor、前后门访问与工程建模
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-25
 tags: [学习笔记, UVM, IC验证]
 draft: false
 ---
@@ -12,9 +12,9 @@ draft: false
 [[学习笔记/UVM/index|返回 UVM 学习笔记目录]] · [[学习笔记/UVM/06-Sequence激励与Sequencer握手|上一章]] · [[学习笔记/UVM/08-Factory注册与类型覆盖|下一章]]
 
 # 第 7 章 · RAL 寄存器模型与前后门访问
-> **核心结论**：UVM 寄存器模型用 `uvm_reg_block -> uvm_reg -> uvm_reg_field` 描述 DUT 寄存器结构，用 `uvm_reg_map + adapter + sequencer` 完成前门访问，用 HDL path 完成后门访问，并通过 desired/mirrored value 模拟和检查 DUT 状态。
+> **核心结论**：UVM [[知识卡片/UVM/26_RAL模型结构|寄存器模型]]用 `uvm_reg_block -> uvm_reg -> uvm_reg_field` 描述 DUT 寄存器结构，用 `uvm_reg_map + adapter + sequencer` 完成[[知识卡片/UVM/27_前门_adapter与总线链路|前门访问]]，用 HDL path 完成[[知识卡片/UVM/28_后门与HDL路径|后门访问]]，并通过 desired/mirrored value 模拟和检查 DUT 状态。
 >
-> **记忆主线**：先建模字段与寄存器 -> 加入 block 和 map -> 绑定 bus sequencer 与 adapter -> 选择 frontdoor/backdoor -> 用 predict/mirror 保持模型与 DUT 一致。
+> **记忆主线**：先建模字段与寄存器 -> 加入 block 和 map -> 绑定 bus [[知识卡片/UVM/18_sequence与sequencer|sequencer]] 与 adapter -> 选择 frontdoor/backdoor -> 用 predict/mirror 保持模型与 DUT 一致。
 
 ---
 
@@ -44,7 +44,7 @@ draft: false
 - `uvm_reg_block` 把多个寄存器组织起来。
 - `uvm_reg_map` 保存地址以及前门访问方式。
 - adapter 把通用寄存器操作翻译成项目总线 transaction。
-始终区分三个值：DUT 真实值、desired value 和 mirrored value。`get/set` 只操作模型，`read/write/mirror` 才可能访问 DUT。
+始终区分三个值：DUT 真实值、[[知识卡片/UVM/29_期望值_镜像值与预测|desired]] value 和 mirrored value。`get/set` 只操作模型，`read/write/mirror` 才可能访问 DUT。
 完整结构：
 ```text
 test / virtual sequence / reference model
@@ -64,7 +64,7 @@ test / virtual sequence / reference model
                     |
                    DUT
 ```
-后门路径绕过 bus driver：
+后门路径绕过 [[知识卡片/UVM/07_driver与virtual_interface|bus driver]]：
 ```text
 uvm_reg
    |
@@ -485,7 +485,7 @@ DUT bus pins
 4. `adapter.reg2bus()` 生成 bus request。
 5. request 通过 bus sequencer 交给 driver。
 6. driver 驱动总线并取得读数据。
-7. driver 完成 item 或返回 response。
+7. driver 完成 item 或返回 [[知识卡片/UVM/24_response|response]]。
 8. `adapter.bus2reg()` 把读数据写回寄存器操作。
 9. `read()` 返回数据和 status。
 10. 模型按预测策略更新 desired/mirrored value。

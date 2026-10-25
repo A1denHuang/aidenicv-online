@@ -2,7 +2,7 @@
 title: 第 9 章 · Callback 回调与平台复用
 description: callback、模块化、参数化类及模块级到芯片级的验证平台复用
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-25
 tags: [学习笔记, UVM, IC验证]
 draft: false
 ---
@@ -12,9 +12,9 @@ draft: false
 [[学习笔记/UVM/index|返回 UVM 学习笔记目录]] · [[学习笔记/UVM/08-Factory注册与类型覆盖|上一章]]
 
 # 第 9 章 · Callback 回调与平台复用
-> **核心结论**：可重用性不是把一个类做得无所不能，而是稳定公共结构、暴露小而明确的扩展点，并把模块级专属资源放在合适层次。callback 处理局部行为插入，factory 替换完整实现，参数化类抽象类型/位宽，芯片级重用则重新组合 env、寄存器模型和 sequence。
+> **核心结论**：[[知识卡片/UVM/33_参数化与平台复用|可重用性]]不是把一个类做得无所不能，而是稳定公共结构、暴露小而明确的扩展点，并把模块级专属资源放在合适层次。[[知识卡片/UVM/32_callback|callback]] 处理局部行为插入，[[知识卡片/UVM/31_factory注册_创建与override|factory]] 替换完整实现，参数化类抽象类型/位宽，芯片级重用则重新组合 env、寄存器模型和 sequence。
 >
-> **记忆主线**：公共功能留在基类 -> 变化点用 callback/factory/config 暴露 -> sequence 保持小而专一 -> 模块 env 不绑定芯片级资源 -> 芯片层重新组合接口、寄存器模型和 virtual sequence。
+> **记忆主线**：公共功能留在基类 -> 变化点用 callback/factory/config 暴露 -> sequence 保持小而专一 -> 模块 env 不绑定芯片级资源 -> 芯片层重新组合接口、寄存器模型和 [[知识卡片/UVM/22_virtual_sequence|virtual sequence]]。
 
 ---
 

@@ -2,7 +2,7 @@
 title: 第 3 章 · 组件层次与 config_db 配置
 description: component 与 object、树形结构、field automation、日志与配置传递
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-25
 tags: [学习笔记, UVM, IC验证]
 draft: false
 ---
@@ -12,9 +12,9 @@ draft: false
 [[学习笔记/UVM/index|返回 UVM 学习笔记目录]] · [[学习笔记/UVM/02-验证平台搭建与测试用例|上一章]] · [[学习笔记/UVM/04-TLM通信与端口连接|下一章]]
 
 # 第 3 章 · 组件层次与 config_db 配置
-> **核心结论**：UVM 以 `uvm_object` 作为大多数类的共同基础，以 `uvm_component` 构造长期存在的验证平台树；field automation 负责对象字段的通用操作，report 机制负责日志策略，config_db 负责沿 UVM 路径传递配置。
+> **核心结论**：UVM 以 [[知识卡片/UVM/02_object与component|uvm_object]] 作为大多数类的共同基础，以 `uvm_component` 构造长期存在的验证平台树；[[知识卡片/UVM/04_transaction与字段操作|field automation]] 负责对象字段的通用操作，[[知识卡片/UVM/11_report日志机制|report]] 机制负责日志策略，config_db 负责沿 UVM 路径传递配置。
 >
-> **记忆主线**：先分清 object/component -> 再看 component 怎样组成树 -> 再学字段自动化 -> 再学日志过滤与行为 -> 最后掌握 config_db 的路径、覆盖优先级和调试。
+> **记忆主线**：先分清 object/component -> 再看 component 怎样组成树 -> 再学字段自动化 -> 再学日志过滤与行为 -> 最后掌握 [[知识卡片/UVM/10_config_db|config_db]] 的路径、覆盖优先级和调试。
 
 ---
 
@@ -32,7 +32,7 @@ draft: false
 本章最容易混淆的三组概念：
 
 1. 变量名、实例名和完整路径。
-2. 类型继承关系与 UVM 树的父子关系。
+2. 类型继承关系与 [[知识卡片/UVM/03_组件树与实例路径|UVM 树]]的父子关系。
 3. config_db 的层次优先级与同层时间优先级。
 
 > **版本背景**：教材示例主要基于 UVM 1.1d。涉及 `starting_phase`、`set_config_*` 等内容时，应注意不同 UVM 版本的差异。

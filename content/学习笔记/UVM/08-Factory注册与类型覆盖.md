@@ -2,7 +2,7 @@
 title: 第 8 章 · Factory 注册与类型覆盖
 description: factory 注册、type override、instance override、实现与调试
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-25
 tags: [学习笔记, UVM, IC验证]
 draft: false
 ---
@@ -12,7 +12,7 @@ draft: false
 [[学习笔记/UVM/index|返回 UVM 学习笔记目录]] · [[学习笔记/UVM/07-RAL寄存器模型与前后门访问|上一章]] · [[学习笔记/UVM/09-Callback回调与平台复用|下一章]]
 
 # 第 8 章 · Factory 注册与类型覆盖
-> **核心结论**：factory 把“代码中请求创建的类型”与“运行时真正创建的类型”分离。只要类已注册、使用 `type_id::create()` 创建且替代类型具有正确继承关系，测试就能在不修改原验证平台结构的情况下替换 transaction、sequence 或 component。
+> **核心结论**：[[知识卡片/UVM/31_factory注册_创建与override|factory]] 把“代码中请求创建的类型”与“运行时真正创建的类型”分离。只要类已注册、使用 `type_id::create()` 创建且替代类型具有正确继承关系，测试就能在不修改原验证平台结构的情况下替换 [[知识卡片/UVM/04_transaction与字段操作|transaction]]、[[知识卡片/UVM/18_sequence与sequencer|sequence]] 或 component。
 >
 > **记忆主线**：注册类型 -> 设置 override -> 调用 factory create -> factory 查询替换表 -> 创建最终类型 -> 通过虚方法表现派生类行为。
 
@@ -927,7 +927,7 @@ endfunction
 | 只改变 transaction 字段 | sequence 约束 |
 | 改变层次连接关系 | env/test 的 build/connect 逻辑 |
 不要为一个布尔配置创建大量派生类。
-也不要用 config_db 模拟复杂多态算法。
+也不要用 [[知识卡片/UVM/10_config_db|config_db]] 模拟复杂多态算法。
 
 ### 8.5.3 可维护的 override 原则（🟢 低）
 - 基类应提供稳定接口和默认行为。

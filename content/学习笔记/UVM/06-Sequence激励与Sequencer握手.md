@@ -2,7 +2,7 @@
 title: 第 6 章 · Sequence 激励与 Sequencer 握手
 description: sequence 仲裁、激励宏、virtual sequence、response 与握手流程
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-25
 tags: [学习笔记, UVM, IC验证]
 draft: false
 ---
@@ -12,9 +12,9 @@ draft: false
 [[学习笔记/UVM/index|返回 UVM 学习笔记目录]] · [[学习笔记/UVM/05-Phase调度与Objection控制|上一章]] · [[学习笔记/UVM/07-RAL寄存器模型与前后门访问|下一章]]
 
 # 第 6 章 · Sequence 激励与 Sequencer 握手
-> **核心结论**：sequence 负责描述“产生什么激励以及按什么顺序产生”，driver 只负责“怎样把 transaction 驱动到 DUT”。sequencer 位于二者之间，完成请求仲裁、握手和应答路由。
+> **核心结论**：[[知识卡片/UVM/18_sequence与sequencer|sequence]] 负责描述“产生什么激励以及按什么顺序产生”，[[知识卡片/UVM/07_driver与virtual_interface|driver]] 只负责“怎样把 transaction 驱动到 DUT”。sequencer 位于二者之间，完成请求[[知识卡片/UVM/20_仲裁与lock_grab|仲裁]]、握手和应答路由。
 >
-> **记忆主线**：sequence 产生 item -> sequencer 仲裁 -> driver 取 item 并驱动 -> item_done 完成握手 -> 可选 response 返回 sequence。
+> **记忆主线**：sequence 产生 item -> sequencer 仲裁 -> driver 取 item 并驱动 -> item_done 完成[[知识卡片/UVM/19_请求握手|握手]] -> 可选 [[知识卡片/UVM/24_response|response]] 返回 sequence。
 
 ---
 
@@ -53,7 +53,7 @@ sequence 造出 req → sequencer 排队 → driver 取走 req → item_done 告
 | `get_next_item()` | driver | 主动取请求（没货就阻塞等） | 取货 |
 | `item_done()` | driver | 归还完成通知 | 签收 |
 
-- **virtual sequence 是"总指挥"**：不直接驱动 DUT，只负责协调多个真实 sequencer（比如同时启动读写两个 sequence）。
+- **[[知识卡片/UVM/22_virtual_sequence|virtual sequence]] 是"总指挥"**：不直接驱动 DUT，只负责协调多个真实 sequencer（比如同时启动读写两个 sequence）。
 - **`uvm_do` 是"四合一"宏**：第一次写可以先用它，但要知道内部 = 创建 + 随机化 + 仲裁 + 发送四步。
 
 典型数据通路（数据从 sequence 一路流到 DUT）：
@@ -925,7 +925,7 @@ if (!$cast(ext, req))                    // [1] 把 req 安全转成扩展类型
 > 记忆：**REQ = sequence 发送的 transaction 类型，三件套必须一致；driver 收派生 transaction 靠多态，但用派生字段必须 `$cast` + 检查；别赌 factory 能救不兼容的类型。**
 ### 6.4.4 `p_sequencer` 的使用（🔴 高）
 
-**核心：sequence 想访问 sequencer 的"自定义字段"（比如 sequencer 里的 port_id），默认的 m_sequencer 是通用类型做不到——p_sequencer 是"强类型版"，能直接访问用户 sequencer 的专属内容。**
+**核心：sequence 想访问 sequencer 的"自定义字段"（比如 sequencer 里的 port_id），默认的 m_sequencer 是通用类型做不到——[[知识卡片/UVM/23_sequence配置与sequencer句柄|p_sequencer]] 是"强类型版"，能直接访问用户 sequencer 的专属内容。**
 
 **为什么需要 p_sequencer？**（先懂问题）
 
@@ -1557,7 +1557,7 @@ class bus_driver extends uvm_driver #(
 > 记忆：**rsp 类型独立 = `uvm_sequence #(REQ, RSP)` 两个参数，sequencer/driver 三件套对齐；适合请求返回字段差异大、读写共用 req 的场景——类型安全，防误用请求字段。**
 ## 6.8 sequence library（🟢 进阶）
 ### 6.8.1 随机选择 sequence（🟢 进阶）
-sequence library 是多个 sequence 类型的集合，可随机挑选并执行。
+[[知识卡片/UVM/25_sequence_library|sequence library]] 是多个 sequence 类型的集合，可随机挑选并执行。
 定义 library：
 ```systemverilog
 class traffic_sequence_library extends uvm_sequence_library #(
