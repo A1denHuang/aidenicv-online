@@ -1,5 +1,5 @@
 ---
-title: "UVM · sequence与sequencer"
+title: "UVM · sequence 与 sequencer"
 description: "sequence 描述激励内容和顺序，sequencer 仲裁并转发请求；前者是 object，后者是 component，driver 才负责真实时序。"
 date: 2026-10-25
 updated: 2026-10-25

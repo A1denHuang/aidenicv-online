@@ -1,5 +1,5 @@
 ---
-title: "UVM · reference、model与scoreboard"
+title: "UVM · reference model 与 scoreboard"
 description: "model 根据规格预测，scoreboard 匹配并比较期望与实际。分离预测和匹配，更利于处理延迟、复用和错误定位。"
 date: 2026-10-25
 updated: 2026-10-25

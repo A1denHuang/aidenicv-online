@@ -1,5 +1,5 @@
 ---
-title: "UVM · env与agent"
+title: "UVM · env 与 agent"
 description: "agent 封装一个协议接口的驱动与观测，env 组合多个 agent 与检查组件。active/passive 是模块到系统复用的重要边界。"
 date: 2026-10-25
 updated: 2026-10-25

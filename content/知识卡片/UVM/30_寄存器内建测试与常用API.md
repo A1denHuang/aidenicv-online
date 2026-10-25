@@ -1,5 +1,5 @@
 ---
-title: "UVM · 寄存器内建测试与常用API"
+title: "UVM · 寄存器内建测试与常用 API"
 description: "内建 sequence 复用路径、reset 值和位读写检查，执行前需确认状态、副作用与排除项；通用测试不等于业务功能验证。"
 date: 2026-10-25
 updated: 2026-10-25

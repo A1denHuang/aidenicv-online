@@ -1,5 +1,5 @@
 ---
-title: "UVM · 前门、adapter与总线链路"
+title: "UVM · 前门、adapter 与总线链路"
 description: "前门走真实总线：map 解析地址，adapter 转换标准寄存器操作与 bus transaction，sequencer/driver 执行并返回结果。"
 date: 2026-10-25
 updated: 2026-10-25

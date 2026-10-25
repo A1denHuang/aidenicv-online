@@ -1,5 +1,5 @@
 ---
-title: "UVM · RAL模型结构"
+title: "UVM · RAL 模型结构"
 description: "RAL 用 field/reg/block/map 表达字段语义、组织层次与地址映射，让测试按寄存器名字访问硬件，减少拼地址和位域的重复工作。"
 date: 2026-10-25
 updated: 2026-10-25

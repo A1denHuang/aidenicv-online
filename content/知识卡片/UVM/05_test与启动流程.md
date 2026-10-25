@@ -1,5 +1,5 @@
 ---
-title: "UVM · test与启动流程"
+title: "UVM · test 与启动流程"
 description: "run_test 选择并创建 test，test 组合环境、设置配置与替换策略，并启动场景。新 test 通常复用相同 env。"
 date: 2026-10-25
 updated: 2026-10-25

@@ -1,5 +1,5 @@
 ---
-title: "UVM · sequence配置与sequencer句柄"
+title: "UVM · sequence 配置与 sequencer 句柄"
 description: "sequence 从绑定的 sequencer 取得组件上下文；m_sequencer 为通用句柄，p_sequencer 为经声明和转换的具体句柄。"
 date: 2026-10-25
 updated: 2026-10-25

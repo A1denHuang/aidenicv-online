@@ -1,5 +1,5 @@
 ---
-title: "UVM · report日志机制"
+title: "UVM · report 日志机制"
 description: "report 分开管理严重性、详细程度、ID 和处理动作。日志消失或过多时，分别检查过滤规则与 action。"
 date: 2026-10-25
 updated: 2026-10-25

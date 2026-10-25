@@ -1,5 +1,5 @@
 ---
-title: "UVM · TLM、FIFO"
+title: "UVM · TLM FIFO"
 description: "FIFO 用缓存解耦生产与消费，让采样和检查按各自节奏运行；它不负责协议匹配，也不自动复制对象。"
 date: 2026-10-25
 updated: 2026-10-25

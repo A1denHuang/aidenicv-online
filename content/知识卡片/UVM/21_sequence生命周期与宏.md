@@ -1,5 +1,5 @@
 ---
-title: "UVM · sequence生命周期与宏"
+title: "UVM · sequence 生命周期与宏"
 description: "显式 start 常见顺序为 pre_start → pre_body → body → post_body → post_start；宏封装创建、随机化与发送，要区分 item 与子 sequence。"
 date: 2026-10-25
 updated: 2026-10-25

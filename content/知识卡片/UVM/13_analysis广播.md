@@ -1,5 +1,5 @@
 ---
-title: "UVM · analysis广播"
+title: "UVM · analysis 广播"
 description: "analysis_port 用 write function 向零个或多个订阅者广播，适合一份观测同时服务检查、覆盖、预测，不提供耗时等待或自动复制。"
 date: 2026-10-25
 updated: 2026-10-25

@@ -1,5 +1,5 @@
 ---
-title: "UVM · 后门与HDL路径"
+title: "UVM · 后门与 HDL 路径"
 description: "后门通过 HDL 路径或自定义 backdoor 直接访问内部状态，适合初始化与定位；它不能证明真实总线正确。"
 date: 2026-10-25
 updated: 2026-10-25

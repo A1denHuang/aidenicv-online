@@ -1,5 +1,5 @@
 ---
-title: "UVM · domain与phase跳转"
+title: "UVM · domain 与 phase 跳转"
 description: "domain 分离组件组的动态阶段，jump 改变阶段流程，却不会自动将 DUT、事务与模型恢复到一致状态。"
 date: 2026-10-25
 updated: 2026-10-25

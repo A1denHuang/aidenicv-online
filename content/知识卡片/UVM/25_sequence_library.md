@@ -1,5 +1,5 @@
 ---
-title: "UVM · sequence、library"
+title: "UVM · sequence library"
 description: "sequence library 按算法和次数组合候选场景，适合随机回归；不自动保证覆盖，也不代替复现记录。"
 date: 2026-10-25
 updated: 2026-10-25

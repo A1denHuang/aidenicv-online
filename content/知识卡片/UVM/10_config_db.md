@@ -1,5 +1,5 @@
 ---
-title: "UVM · config、db"
+title: "UVM · config_db"
 description: "config_db 按参数化类型、路径和字段名查找配置，还需核对 set/get 时机及覆盖优先级。"
 date: 2026-10-25
 updated: 2026-10-25

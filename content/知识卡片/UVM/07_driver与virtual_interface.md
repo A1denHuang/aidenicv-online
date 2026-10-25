@@ -1,5 +1,5 @@
 ---
-title: "UVM · driver与virtual、interface"
+title: "UVM · driver 与 virtual interface"
 description: "driver 将 transaction 转为引脚时序，virtual interface 让 class 访问静态 interface 实例，共同连接事务层与引脚层。"
 date: 2026-10-25
 updated: 2026-10-25

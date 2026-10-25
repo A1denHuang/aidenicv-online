@@ -1,5 +1,5 @@
 ---
-title: "UVM · TLM与port、export、imp"
+title: "UVM · TLM 与 port/export/imp"
 description: "TLM 用事务和方法接口通信：port 发起调用，export 暴露/转接接口，imp 将调用落到组件实现，链路最终要有可用实现。"
 date: 2026-10-25
 updated: 2026-10-25

@@ -1,5 +1,5 @@
 ---
-title: "UVM · 仲裁与lock、grab"
+title: "UVM · 仲裁与 lock/grab"
 description: "仲裁解决同一 sequencer 的争用，lock/grab 申请独占。grab 影响后续授权，不能抢断已执行的总线事务。"
 date: 2026-10-25
 updated: 2026-10-25

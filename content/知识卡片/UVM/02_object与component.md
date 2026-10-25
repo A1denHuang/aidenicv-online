@@ -1,5 +1,5 @@
 ---
-title: "UVM · object与component"
+title: "UVM · object 与 component"
 description: "component 也是 object，但额外属于组件树并自动参与 phase。transaction、sequence 和配置对象通常是按需创建的普通 object。"
 date: 2026-10-25
 updated: 2026-10-25

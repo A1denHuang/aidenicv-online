@@ -1,5 +1,5 @@
 ---
-title: "UVM · factory注册、创建与override"
+title: "UVM · factory 注册、创建与 override"
 description: "factory 在创建时选实际类型，让平台通过派生类替换实现。注册给入口，create 查工厂，override 必须早于目标创建。"
 date: 2026-10-25
 updated: 2026-10-25

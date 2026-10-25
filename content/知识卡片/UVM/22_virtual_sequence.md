@@ -1,5 +1,5 @@
 ---
-title: "UVM · virtual、sequence"
+title: "UVM · virtual sequence"
 description: "virtual sequence 组合普通 sequence 协调多个接口；virtual sequencer 通常保存底层句柄，不需要真实引脚 driver。"
 date: 2026-10-25
 updated: 2026-10-25

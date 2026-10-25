@@ -1,5 +1,5 @@
 ---
-title: "UVM · transaction与字段操作"
+title: "UVM · transaction 与字段操作"
 description: "transaction 是抽象操作的数据载体。字段操作决定复制、比较、打印和打包行为；句柄赋值不会产生独立副本。"
 date: 2026-10-25
 updated: 2026-10-25
