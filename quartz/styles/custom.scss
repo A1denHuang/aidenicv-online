@@ -164,11 +164,24 @@ article td {
 }
 
 .explorer-content a.active,
-.explorer-content a[aria-current="page"],
-.toc-content a.in-view {
+.explorer-content a[aria-current="page"] {
   color: var(--secondary);
   background: var(--highlight);
   box-shadow: inset 2px 0 0 var(--secondary);
+}
+
+/* Give directory markers breathing room, including wrapped headings. */
+.toc-content > li > a {
+  display: block;
+  margin-block: 2px;
+  padding: 3px 8px;
+  line-height: 1.55;
+}
+
+.toc-content > li > a.in-view {
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--highlight) 60%, transparent);
+  box-shadow: inset 2px 0 0 color-mix(in srgb, var(--secondary) 65%, transparent);
 }
 
 .search > .search-button,
